@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+
+        <script>
+            console.log("Hello World!!!")
+            console.warn("Warning")
+            console.error("My Error")
+            //console.dir(navigator)
+
+            //alert("HELLO WORLD!")
+            //confirm("Are you sure you want close this text?")
+            //prompt("Enter your value")
+
+            // Змінні 
+
+            var myVariable1 = "My Variable";  // String Строка 1 тип даних
+            console.log(myVariable1);
+
+            myVariable1 = `Reasign value`;
+            console.log(myVariable1);
+
+            let myLocalVariable = "Local Variable";
+            if(true){
+                var innerVariable = "I am inner variable"
+                myLocalVariable = "Change Value";
+            }
+            console.log(myLocalVariable, innerVariable)
+
+
+            /*  const  */
+
+            const myConstantVariable = "Hello World";
+            //myConstantVariable = `I am changing`;
+
+            console.log(myConstantVariable)
+
+            // Data type
+
+            
+            /*
+            let stringData = "Text";
+            let numberData = 56 + 77;
+            let booleanType = false;    
+            let myUndefined = undefined;
+            let myNull = null;
+            let myObject = {
+                name: "John",
+                age: 38
+            }
+            console.log(stringData, numberData, booleanType, myUndefined, myNull, myObject);
+
+            console.log(typeof stringData) 
+            
+            
+            navigator.geolocation.getCurrentPosition(success, (err) => { console.log(err)});
+
+            function success(pos) {
+                let long, lat = null;
+                long = pos.coords.longitude;
+                lat = pos.coords.latitude;
+                console.log(long, lat);
+            }*/
+        </script>
+
+
+     <script src="./script.js"></script>
+    </body>
+</html>
