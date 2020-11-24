@@ -103,6 +103,15 @@ for(let listElement of [...allUserClassName]){
 }
 
 
+const allTagElements = document.querySelectorAll("div");
+
+for(let listElement of [...allTagElements]){
+    
+    console.log(listElement);
+    listElement.style="border: 1px solid black; box-sizing: border-box;";
+}
+
+
 
 
 
