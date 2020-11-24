@@ -33,6 +33,7 @@ console.log(
           }
           if(width > maxWidth && blockResizeStatus === "TO_LARGE"){
               blockResizeStatus = "TO_SMALL";
+
           }
           if(width > maxWidth && blockResizeStatus === "TO_SMALL"){
             blockResizeStatus = "TO_LARGE";
@@ -83,6 +84,23 @@ console.log(
               createNewElement(singleUser)
           }
       }
+
+
+// classNames //
+
+const allUserClassName = document.getElementsByClassName("card-wrapper");
+console.dir(allUserClassName);
+
+for(let listElement of allUserClassName){
+    listElement.classList.add("blue");
+}
+
+const querySelectorClassName = document.querySelectorAll(".card-wrapper");
+
+for(let listElement of [...allUserClassName]){
+    console.log(listElement);
+    listElement.classList.add("red");
+}
 
 
 
