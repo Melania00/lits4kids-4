@@ -21,9 +21,9 @@ const controlObject = {
     gallerySettings: {
         currentImageIndex: 0
     },
-    selecrors : {
+    selectors : {
         pageTimer: document.querySelector('#page-timer'),
-        galleryDisplayArea: document.querySelector('#gallery-slector')
+        galleryDisplayArea: document.querySelector('#gallery-display-area')
         //class selector must be
     }
 }
@@ -40,6 +40,7 @@ document.addEventListener("click", (e) => {
         //alert("right")
         changeGalleryItem(1,controlObject)
     } 
+    assignGalleyElemet(controlObject)
 });
 
 /*Assign image src ? create new object*/
@@ -56,8 +57,19 @@ function changeGalleryItem(step, mainObject){
     console.log(mainObject.gallerySettings.currentImageIndex)
     
 }
-function assignGalleyElemet(){
+function assignGalleyElemet(mainObject){
+   let galleryDisplayArea = mainObject.selectors.galleryDisplayArea;
+   let galleryMainBase = mainObject.galleryMainBase;
+   let currentImageIndex = mainObject.gallerySettings.currentImageIndex;
 
+   let currentGallary = galleryMainBase[currentImageIndex];
+   let galleryImage = createNewElement({
+       tag: "img",
+       styleClasse: "gallery-item",
+       src: currentGallary.url
+   });
+   galleryDisplayArea.innerHTML = "";
+   galleryDisplayArea.appendChild(galleryImage)
 }
 
 /*Create new element*/
