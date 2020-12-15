@@ -1,0 +1,317 @@
+@import "./main-fonts.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+	--main-black-color: #000;
+	--main-gray-color: #B3ACAC;
+	--main-purple-color: #FCCBA1;
+
+	--footer-default-height: 150px;
+	--main-page-height: 90vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+	background-image: url("https://www.learnreligions.com/thmb/QV3uUjKJ0yM6mgpqs4uSKSsuBkA=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gi-white-light-geometry.jpg-5820c40b5f9b581c0b51b2ab.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-size: contain;
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+}
+
+p {
+	color: #ff0000;
+	font-size: 18px;
+}
+h1 {
+	color: brown;
+}
+h2, h3, h4 {
+	color: orange;
+	text-transform: uppercase;
+}
+main section p.block-type-left {
+	column-count: 3;
+}
+
+
+
+.page-main-banner {
+	background: #eee;
+	background-image: url(https://cdn.getyourguide.com/img/tour/51c46ff2cfb62.jpeg/148.jpg);
+	background-size: cover;
+	background-position: bottom center;
+	background-attachment: fixed;
+	height: 600px;
+	overflow: auto;
+}
+.page-main-banner .main-banner-inner-area {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.3);
+}
+.arrow-down {
+	font-size: 5rem;
+}
+
+.page-text-style {
+	color: #ff8080;
+	font-size: 18px;
+	font-weight: bold;
+}
+.block-type-left {
+	width: 30%;
+	background-color: #000;
+	float: left;
+}
+.block-type-right {
+	width: 50%;
+	background-color: #BA55D3;
+	float: right;
+}
+.cleared-float {
+	clear: both;
+}
+
+
+/* page cards */
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cards-container div.card {
+	width: calc(100% / 3);
+	/*height: 200px;*/ 
+	min-height: 200px;
+	background: green;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	padding: 20px;
+}
+.card-central-style {
+	padding: 50px 10px 5px 30px !important;
+}
+
+.cards-container .card .btn {
+	border: 1px solid white;
+	background: none;
+	border-radius: 50px;
+	padding: 10px;
+	color: #fff;
+	cursor: pointer;
+ }
+
+
+ /* css for html Grail  */
+
+.background-gray-color {
+	background: var(--main-gray-color);
+}
+.background-purple-color {
+	background: var(--main-purple-color);
+}
+.background-blue-color {
+	background: #66A1DD;
+}
+.background-teal-color {
+	background: #008080;
+}
+
+
+main, section.main-page-content-area {
+	padding-top: 60px;
+}
+
+
+.page-container-area {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.main-page-header {
+	overflow: auto;
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+}
+.main-page-header nav ul {
+ 	display: flex;
+ 	list-style: none;
+ 	margin: 0px;
+}
+.main-page-header nav ul li {
+	padding: 20px;
+	background: none;
+	transition: background 1.5s linear;
+}
+.main-page-header nav ul li:hover {
+	background: #fff;
+}
+.main-page-header nav ul li:hover a {
+	color: blue;
+}
+.main-page-header nav ul li.active-menu {
+	background: #fff;
+}
+
+
+.main-page-header nav ul a {
+	text-decoration: none;
+	padding: 10px;
+	color: brown;
+	transition: color 1.5s linear;/**/
+}
+
+
+.page-body-wrapper {
+	display: flex;
+	min-height: var(--main-page-height);
+}
+.page-body-wrapper .left-page-menu,
+.page-body-wrapper .right-product-adwertisement-area {
+	width: 20%;
+}
+
+.left-page-menu ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.left-page-menu ul li {
+	padding: 10px 0px 10px 0px;
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid red;
+	transition: background 1.5s cubic-bezier(.17,.67,.84,.39);
+}
+.left-page-menu ul li:hover {
+	background: #fff;
+}
+
+.test-picture {
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+	transition: .5s linear;
+}
+.test-picture:hover {
+	filter: none;
+}
+.blur-picture {
+	filter: blur(5px);
+}
+.sepia-picture {
+	filter: grayscale(1);
+}
+.hue-color-picture {
+	filter: saturate(8);
+}
+
+.scale-this-picture, 
+.rotate-style {
+	transition: .5s linear;
+}
+.scale-this-picture:hover {
+	transform: scale(1.2);
+}
+
+.rotate-style:hover {
+	transform: rotateX(180deg);
+}
+
+.advanced-animation {
+	height: 250px;
+	width: 500px;
+	background-image: url(https://cdn.getyourguide.com/img/tour/51c46ff2cfb62.jpeg/148.jpg);
+	background-size: 100%;
+	background-position-x: 0px;
+	background-position-y: 0px;
+	animation: city-live 4s linear infinite; /*forwards*/
+	/*animation-name: city-live;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;*/
+
+}
+@keyframes city-live {
+	0% { background-position-y: 0px; 
+		background-position-x: 0px;
+	}
+	60% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+	100% { background-position-y: 1250px; 
+		background-position-x: 1250px;
+		transform: rotateX(360deg) rotateY(180deg);
+	}
+}
+
+
+
+ 
+
+.strips-list {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+.strips-list li {
+	padding: 10px;
+	background: #9795B5;
+}
+.strips-list li:nth-child(even) {
+	background: #723885;
+}
+
+.page-body-wrapper section.main-page-content-area {
+	width: 60%;
+	background: white;
+}
+
+.page-body-wrapper 
+section.main-page-content-area 
+.main-page-upper-columns {
+	display: flex;
+	justify-content: space-around;
+}
+
+.page-footer {
+	background: var(--main-black-color);
+	min-height: var(--footer-default-height);
+}
+
+
+
+
+
+
+/* Responsive Media query selectors */
+
+@media screen and (max-width: 800px){
+	.background-purple-color {
+		background: #C14D00;
+	}
+}
+@media screen and (max-width: 650px){
+	.main-page-header {
+		position: relative;
+	}
+	.main-page-header .main-menu-inner-area ul,
+	.page-body-wrapper {
+		display: block;
+	} 
+	.page-body-wrapper .left-page-menu, 
+	.page-body-wrapper .right-product-adwertisement-area,
+	.page-body-wrapper section.main-page-content-area {
+		width: 100%;
+	}
+	.background-purple-color {
+		background: #979100;
+	}
+}
