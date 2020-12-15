@@ -18,6 +18,9 @@ const controlObject = {
         description: "Litle description abour the city 3"
     }],
     timerSeasonSets: [],
+    gallerySettings: {
+        currentImageIndex: 0
+    },
     selecrors : {
         pageTimer: document.querySelector('#page-timer'),
         galleryDisplayArea: document.querySelector('#gallery-slector')
@@ -26,4 +29,44 @@ const controlObject = {
 }
 
 
-/**/
+/*Events gallery left right click*/
+document.addEventListener("click", (e) => {
+    console.log(e.target.dataset)
+    const galleryBtn = e.target.dataset.galleryBtn;
+    if(galleryBtn === "left"){
+        //alert ("left")
+        changeGalleryItem(-1,controlObject)
+    }else if(galleryBtn === "right"){
+        //alert("right")
+        changeGalleryItem(1,controlObject)
+    } 
+});
+
+/*Assign image src ? create new object*/
+function changeGalleryItem(step, mainObject){
+    let galleryMainBaseLength = mainObject.galleryMainBase.length;
+    mainObject.gallerySettings.currentImageIndex += step;
+    
+
+    if(mainObject.gallerySettings.currentImageIndex >= galleryMainBaseLength){
+        mainObject.gallerySettings.currentImageIndex = 0;
+    }else if(mainObject.gallerySettings.currentImageIndex < 0){
+        mainObject.gallerySettings.currentImageIndex = galleryMainBaseLength -1;
+    }
+    console.log(mainObject.gallerySettings.currentImageIndex)
+    
+}
+function assignGalleyElemet(){
+
+}
+
+/*Create new element*/
+function createNewElement(elementInformation) {
+    const newElement = document.createElement(elementInformation.tag);
+    if(elementInformation.styleClasse) newElement.className = elementInformation.styleClasse;
+    if(elementInformation.tag === 'img' && elementInformation.src){
+        newElement.src = elementInformation.src;
+    }
+    if(elementInformation.innerText) newElement.innerHTML = elementInformation.innerText;
+    return newElement  
+}
