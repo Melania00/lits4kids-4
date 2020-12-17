@@ -12,25 +12,81 @@ header {
     min-height: 40px;
 }
 
+.conteiner {
+    max-width: 1000px;
+}
+
 .page-main {
     margin-top: 50px;
     min-height: 50vh;
     background: #756775;
 }
 
-.footer {
-    background: #6b6b6b;
-    min-height: 50px;
-    width: 100%;
-}
+
 
 .page-main .gallery-wrapper {
     display: flex;
-    height: 300px;
+    height: 450px;
 }
 
 .page-main .gallery-wrapper .gallery-body {
     width: 90%;
     background: rgb(233, 115, 115);
     
+}
+.gallery-body {
+    overflow: hidden;
+}
+
+.gallery-body img{
+    width: 100%;
+}
+.gallery-body .inner-text-area {
+    position: absolute;
+    padding: 20px;
+    background-color: #0000001e;
+    width: 100%;
+    z-index: 2;
+}
+
+.gallery-wrapper button {
+    z-index: 10;
+    cursor: pointer;
+    font-size: 65px;
+    width: 5%;
+    background-color: rgb(143, 108, 137);
+    border: 3px solid rgb(189, 112, 176);
+    transition: all 0.1s linear;
+}
+
+.gallery-wrapper button:active {
+    background: coral;
+    color: white;
+}
+/*.gallery-wrapper button:hover {
+    background-color: rgb(230, 198, 140);
+}*/
+.gallery-item {
+    opacity: 0;
+   animation: image-show .5s linear forwards;
+}
+ 
+@keyframes image-show {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.left-btn {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+.right-btn {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.footer {
+    background: #6b6b6b;
+    min-height: 50px;
+    width: 100%;
 }

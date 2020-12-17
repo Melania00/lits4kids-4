@@ -57,6 +57,10 @@ function changeGalleryItem(step, mainObject){
     console.log(mainObject.gallerySettings.currentImageIndex)
     
 }
+
+assignGalleyElemet(controlObject)
+
+
 function assignGalleyElemet(mainObject){
    let galleryDisplayArea = mainObject.selectors.galleryDisplayArea;
    let galleryMainBase = mainObject.galleryMainBase;
@@ -65,17 +69,31 @@ function assignGalleyElemet(mainObject){
    let currentGallary = galleryMainBase[currentImageIndex];
    let galleryImage = createNewElement({
        tag: "img",
-       styleClasse: "gallery-item",
+       styleClasses: "gallery-item",
        src: currentGallary.url
    });
+
+     
+   let pictureInerText = createNewElement({
+       tag: "div",
+       styleClasses: "inner-text-area",
+       innerText: `
+          <h2>${currentGallary.title}</h2>
+          <p>${currentGallary.description}</p>
+       `
+   })
+
+
    galleryDisplayArea.innerHTML = "";
+   galleryDisplayArea.appendChild(pictureInerText)
    galleryDisplayArea.appendChild(galleryImage)
+   
 }
 
 /*Create new element*/
 function createNewElement(elementInformation) {
     const newElement = document.createElement(elementInformation.tag);
-    if(elementInformation.styleClasse) newElement.className = elementInformation.styleClasse;
+    if(elementInformation.styleClasses) newElement.className = elementInformation.styleClasses;
     if(elementInformation.tag === 'img' && elementInformation.src){
         newElement.src = elementInformation.src;
     }
