@@ -1,5 +1,5 @@
 const timerScriptDB = {
-    timerDBAssets: [
+    timerAssets: [
         {
           id:'1',
           monthName:'Jauary',
@@ -88,9 +88,57 @@ const timerScriptDB = {
     currentTime: ''
 }
 
+const timerSettings = {
+    timerAssets: timerScriptDB.timerAssets,
+    currentTime: null,
+    selectors: {
+        pageTimer: document.querySelector('#page-timer'),
+        pictureArea: document.querySelector('body'),
+        classStyleSeason: document.querySelectorAll('.season-style')
+    }
+    
+}
 
 
+/*  Timer engine  */
+let timeEngine = setInterval(function(){
+    console.log(1)
+        timerUpdate(timerSettings);
+        showTime(timerSettings);
 
+        // clearInterval(timeEngine)
+},1000);
+
+/*  Timer updates   */
+function timerUpdate(timerData){
+    timerData.currentTime = new Date();
+}
+
+/*  Timer display  */
+function showTime(timerData){
+    let year = timerData.currentTime.getFullYear();
+    let month = timerData.currentTime.getMonth() + 1;
+    let day = timerData.currentTime.getDay();
+    let hours = timerData.currentTime.getHours();
+    let minutes = timerData.currentTime.getMinutes();
+    let seconds = timerData.currentTime.getSeconds();
+
+    let currentMonthObject = timerData.timerAssets[month - 1];
+    let timeTarget = timerData.selectors.pageTimer;
+
+    let timerText = `
+    <h3>${currentMonthObject.monthName} ${year}</h3>
+   <p>${month}/${day}/${hours}:${minutes} ${seconds}</p>`
+
+    displayTime(timeTarget, timerText)
+
+}
+
+function displayTime(target, text) {
+    target.innerHTML = text;
+}
+
+/* Set time data  */
 
 
 
